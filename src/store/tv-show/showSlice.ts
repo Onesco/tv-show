@@ -45,14 +45,12 @@ const showSlice = createSlice({
           state.showData.isLoading = false;
         })
        .addCase(fetchShow.rejected, (state, action) => {
-        console.log("something went wrong",action.payload)
         state.showData.error = JSON.stringify(action.error);
       });
 
       builder
        .addCase(fetchEpisodes.pending, (state) => {
         state.episodesData.isLoading = true;
-        console.log("fetching episodes loading")
       })
        .addCase(fetchEpisodes.fulfilled, (state, action) => {
           state.episodesData.episodes = action.payload;
