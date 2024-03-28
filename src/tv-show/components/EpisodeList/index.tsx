@@ -12,6 +12,9 @@ export default function EpisodeList({ episodes, error, isLoading }: EpisodesProp
   if( isLoading ) {
     return <div>Loading...</div>
   }
+  if( error ) {
+    return <div>something went wrong</div>
+  }
   return (
     <>
       {episodes.map((episode) => (
