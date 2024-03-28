@@ -10,7 +10,8 @@ const Image = styled.img`
   width: 100%; 
   max-width: 100%; 
   height: auto; 
-  object-fit: cover; 
+  object-fit: cover;
+  border-radius: 0.5rem;
 `;
 
 export default function EpisodeDetail() {

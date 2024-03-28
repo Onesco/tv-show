@@ -13,15 +13,19 @@ const Thumbnail = styled.img`
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 0.25rem;
 `;
 
 const Card = styled.section`
   background: white;
   border-radius: 0.25rem;
-  border: 1px solid #777;
-  display:flex;
-  gap: 1.5em;
+  border: 1px solid #e0ffe0; 
+  display: flex;
   flex-direction: column;
+  gap: 1.5em;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 
   @media (min-width: 768px) {
     flex-direction: row;
