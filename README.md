@@ -1,6 +1,6 @@
 # The Powerpuff Girls
 
-this is lamdpage application of the Powerpuff girls tv-show series. it includes a list of all episodes of the series and a page detail for each episode
+this is landing page of the Powerpuff girls tv-show series. it includes a list of all episodes of the series and a page detail for each episode. **Note it has no fancy UI as this is for demostration purposes**
 
 ## Available Scripts
 
@@ -30,4 +30,4 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run lint`
-This runs the eslint and suggest the like errors or warnings
+This runs the eslint and suggest the likely errors or warnings
