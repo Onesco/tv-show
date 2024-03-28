@@ -11,7 +11,7 @@ export default function ShowDetail() {
   return (
     <>
      <ShowCard show={showData.show} error={showData.error} isLoading={showData.isLoading}/>
-     <h3>List of Episodes</h3>
+     <h2>List of Episodes</h2>
      <EpisodeList 
       episodes={episodesData.episodes} 
       error={episodesData.error} 

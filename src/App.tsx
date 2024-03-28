@@ -10,6 +10,8 @@ import EpisodeDetail from "./tv-show/components/EpisodeDetails";
 const Container = styled.main`
   display: flex;
   flex-direction: column;
+  max-width: 65rem;
+  margin: 0 auto;
   `;
 
 function App() {

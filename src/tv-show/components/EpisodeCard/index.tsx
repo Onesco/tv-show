@@ -10,6 +10,16 @@ type EpisodeCardPropTypes = {
 }
 
 const Thumbnail = styled.img`
+  max-width: 100%;
+  object-fit: cover;
+`;
+
+const Card = styled.section`
+  background: white;
+  border-radius: 0.25rem;
+  border: 1px solid #777;
+  display:flex;
+  gap: 1.5em;
 `;
 
 
@@ -17,12 +27,17 @@ export default function EpisodeCard({ episode }: EpisodeCardPropTypes) {
 
   const summaryObj = {__html: episode.summary};  
   return (
-    <div style={{display: "flex"}}>
-      <Thumbnail src={episode.image?.medium ? episode.image?.medium : placeholderImage} />
-      <Link to={`/episodes/${episode.id}`}>
-        <h3>{episode.name}</h3>
-        <div style={{margin: 0, lineHeight:1.5}} dangerouslySetInnerHTML={summaryObj}/>
-      </Link>
-    </div>
+    <Link style={{textDecoration: "none", color: "black"}} to={`/episodes/${episode.id}`}>
+      <Card>
+        <div style={{flex:1.5}}>
+          <Thumbnail src={episode?.image?.original? episode?.image?.original : placeholderImage} />
+        </div>
+        <div style={{flex: 5}} >
+          <h2>{episode.name}</h2>
+          <p style={{margin: 0, lineHeight:1.5}} dangerouslySetInnerHTML={summaryObj}/>
+        </div>
+      </Card>
+    </Link>
+    
   )
 }
