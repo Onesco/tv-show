@@ -12,6 +12,18 @@ const Container = styled.main`
   flex-direction: column;
   max-width: 65rem;
   margin: 0 auto;
+
+  padding: 0 20px; 
+
+  max-width: 100%;
+  
+  @media (min-width: 768px) {
+    max-width: 65rem; 
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 80rem; 
+  }
   `;
 
 function App() {

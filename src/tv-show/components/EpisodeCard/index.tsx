@@ -11,6 +11,7 @@ type EpisodeCardPropTypes = {
 
 const Thumbnail = styled.img`
   max-width: 100%;
+  height: auto;
   object-fit: cover;
 `;
 
@@ -20,8 +21,12 @@ const Card = styled.section`
   border: 1px solid #777;
   display:flex;
   gap: 1.5em;
-`;
+  flex-direction: column;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
 
 export default function EpisodeCard({ episode }: EpisodeCardPropTypes) {
 

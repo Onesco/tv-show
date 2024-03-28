@@ -15,6 +15,13 @@ flex-direction: column;
 list-style-type: none;
 padding: 0;
 gap: 3.5rem;
+
+@media (min-width: 768px) {
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 1.5rem; 
+}
 `
 
 
