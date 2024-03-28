@@ -32,7 +32,7 @@ function App() {
   useEffect(()=>{
     const fetchData = async () => {
       const response = await dispatch(fetchShow("Powerpuff Girls"));
-      dispatch(fetchEpisodes(response.payload.id));
+      dispatch(fetchEpisodes(response?.payload?.id));
     }
     fetchData();
   }, []);
