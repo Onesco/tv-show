@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import ShowDetail from "./tv-show/components/ShowDetail";
+import { fetchEpisodes, fetchShow } from "./store/tv-show/showSlice";
+import styled from "@emotion/styled";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "./store/store";
+import { Route, Routes } from "react-router-dom";
+import EpisodeDetail from "./tv-show/components/EpisodeDetails";
+
+const Container = styled.main`
+  display: flex;
+  flex-direction: column;
+  `;
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      const response = await dispatch(fetchShow("Powerpuff Girls"));
+      dispatch(fetchEpisodes(response.payload.id));
+    }
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Container>
+      <Routes>
+        <Route path="/" element={<ShowDetail/>}/>
+        <Route path="/episodes/:id" element={< EpisodeDetail />}/>
+        <Route path="*" element={<h1>404</h1>}/>
+      </Routes>
+    </Container>
   );
 }
 

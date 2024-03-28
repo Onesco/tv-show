@@ -1,0 +1,25 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { RootState } from "../../../store/store";
+import { } from "../../../store/tv-show/showSlice";
+import placeholderImage from "../../../constants/tv-show/episodeImagePlaceHolder";
+
+
+export default function EpisodeDetail() {
+  const {episodesData} = useSelector(( state: RootState ) => state.movieShow);
+  const { id } = useParams();
+  const [ episode ] =  episodesData.episodes.filter((episode)=> episode.id == id);
+
+  const summaryObj = {__html: episode.summary}; 
+  
+  return (
+    <div>
+      <img src={episode?.image?.original ? episode?.image?.original : placeholderImage} />
+      <h1>Episode: {episode.name}</h1>
+      <div style={{margin: 0, lineHeight:1.5}} dangerouslySetInnerHTML={summaryObj}/>
+    </div>
+  )
+}
+
+// 
